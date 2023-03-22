@@ -30,11 +30,15 @@ resources = {
     "coffee": 100,
 }
 
+profit = 0
+
 def generate_report():
-    for key, value in resources.items():
-       return print(key, value)
+        print(f"Water: {resources['water']}")
+        print(f"Coffee: {resources['coffee']}")
+        print(f"Milk: {resources['milk']}")
+        print(f"Profit: ${profit}")
 
-
+        
 def check_resource(drink):
     for ingredient in resources.keys():
         if resources[ingredient] < MENU[drink].get("ingredients").get(ingredient):
@@ -61,7 +65,8 @@ def process_coins(drink, input_quarters, input_dimes, input_nickles, input_penni
     if cost_of_drink > sum:
         return False
     else:
-        profit = sum - cost_of_drink
+        global profit
+        profit += sum - cost_of_drink
         return profit
        
 
@@ -74,11 +79,6 @@ def make_coffee(drink):
     return print(resources)
 
         
-
-
-
-
-
 while True:
     choice = input( "What would you like? (espresso/latte/cappuccino):" ) 
     if choice == "off":
