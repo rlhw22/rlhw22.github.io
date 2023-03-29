@@ -1,8 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "../../../../../Downloads/oop-coffee-machine-start"
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "name": "rlhw22.github.io",
+            "path": "../.."
+        },
+        {
+            "path": "../../../template_downloads/for_webapp_signup"
+        }
+    ]
 }
