@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<form method="POST" >
+ <h3 align="center">Sign up</h3>
+ <div class="form-group">
+    <label for="email" >Email Address</label>
+    <input 
+    type="email" 
+    class="form-control"
+     id="email" 
+     name="email" 
+     placeholder="Enter email"/>
+</div>
+<div class="form-group">
+    <label for="firstName" >First Name</label>
+    <input 
+    type="text" 
+    class="form-control"
+     id="firstName" 
+     name="firstName" 
+     placeholder="Enter first name"/>
+</div>
+<div class="form-group">
+    <label for="password1" >Password</label>
+    <input 
+    type="password" 
+    class="form-control"
+     id="password1" 
+     name="password1" 
+     placeholder="Enter password"/>
+</div>
+<div class="form-group">
+    <label for="password2" >Password (Confirm)</label>
+    <input 
+    type="password" 
+    class="form-control"
+     id="password2" 
+     name="password2" 
+     placeholder="Confirm password"/>
+</div>
+<br> </br>
+<h6> Select User Type: </h6>
+<input type="checkbox" name="check_if_user" id="chk_user" value="user" checked><label for='chk_user'>Normal User</label>
+
+<input type="checkbox" name="check_if_admin" id="chk_admin" value="admin"><label for='chk_admin'>Admin</label>
+<br />
+<br>  </br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
+
+<script>
+function getUserType(oCheckbox)
+{
+     var checkbox1 = document.getElementById("chk_user");
+     var checkbox2 = document.getElementById("chk_admin");
+     result = " ";
+     if (checkbox1.checked == true){
+          var user_selected = document.getElementById("chk_user").value;
+          result += user_selected
+     }
+     else if (checkbox2.checked = true){
+          var admin_selected = document.getElementById("chk_admin").value;
+          result += admin_selected
+     }
+     else{
+          return documents.getElementById("result").innerHTML="Select an option.";
+     }
+     return document.getElementById("result").innerHTML = "You have selected" + result;
+
+}
+oCheckbox1 = oForm.elements["check_if_user"]
+oCheckbox2 = oForm.elements["check_if_admin"]
+
+getUserType(oCheckbox1)
+getUserType(oCheckbox2)
+</script>
